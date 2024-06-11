@@ -928,3 +928,164 @@ a:focus {
   color: inherit;
 }
 /*# sourceMappingURL=style.css.map */
+.custom_padding {
+  padding:60px 0px;
+}
+
+.prime_service_container {
+  position: relative;
+}
+
+.prime_container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.prime_heading_container {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.prime_heading_container h2 {
+  font-size: 36px;
+  color: #333;
+}
+
+.prime_heading_container h2 span {
+  color:  #00204a;
+}
+
+.prime_heading_container p {
+  font-size: 16px;
+  color: #777;
+  margin-top: 10px;
+}
+
+.prime_service_slider_wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.prime_service_slider {
+  display: flex;
+  transition: transform 1s ease;
+}
+
+.prime_box {
+  background: #fff;
+  border: 1px solid #ddd;
+  margin: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex: 0 0 auto; /* Prevent boxes from shrinking */
+  width: calc(25% - 20px); /* Adjust width to fit 3 boxes in a row with margin */
+  box-sizing: border-box; /* Include border in width calculation */
+}
+
+.prime_icon-box {
+  padding: 30px;
+  font-size: 50px;
+  color: #00204a;
+}
+
+.prime_detail-box {
+  padding: 20px;
+}
+
+.prime_detail-box h5 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.prime_detail-box p {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.prime_detail-box a {
+  color:  #00204a;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.prime_btn-box {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.prime_btn-box a {
+  background:  #00204a;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .prime_box {
+      width: calc(100% - 20px); /* Adjust width for responsive layout */
+  }
+}
+/* Keyframes for animating the cards */
+@keyframes slideInFromLeft {
+  0% {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes rotateCard {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.prime_box {
+  transition: transform 1s ease, opacity 0.5s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px; /* Add perspective for 3D effect */
+  position: relative;
+  border: 2px solid transparent; /* Add a transparent border */
+  border-radius: 10px;
+  overflow: hidden; /* Hide overflow content */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+}
+
+.prime_box:hover {
+  animation: rotateCard 1s forwards, removeBlur 1s 1s forwards; /* Add removeBlur animation */
+  border: 2px solid #b0c9ff; /* Change border color on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Increase shadow on hover */
+  opacity: 0.8; /* Fade out slightly on hover */
+}
+
+@keyframes removeBlur {
+  0% {
+    filter: blur(3px); /* Add blur effect */
+  }
+  100% {
+    filter: blur(0); /* Remove blur effect after rotation */
+  }
+}
+
+.prime_icon-box,
+.prime_detail-box {
+  backface-visibility: hidden;
+}
+
+.prime_box:not(:hover) {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transform: rotateY(0deg);
+  opacity: 1;
+}
