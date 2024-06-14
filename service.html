@@ -33,7 +33,164 @@
   <link href="css/responsive.css" rel="stylesheet" />
 
 </head>
+<style>
+  .projects_section {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+}
 
+.heading_container {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.heading_container h2 span {
+  color: #3498db;
+}
+
+.cards_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  max-width: 300px;
+  flex: 1 1 calc(33.333% - 20px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.img-box {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.card:hover .img-box img {
+  transform: scale(1.1);
+}
+
+.detail-box {
+  padding: 20px;
+  text-align: center;
+}
+
+.detail-box h5 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #333;
+}
+
+.detail-box p {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.detail-box .category {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.btn-box {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.btn-box a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn-box a:hover {
+  background-color: #2980b9;
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    flex: 1 1 100%;
+  }
+}
+/* Existing styles */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  animation: zoomIn 0.6s;
+}
+
+@keyframes zoomIn {
+  from {transform: scale(0);}
+  to {transform: scale(1);}
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+</style>
 <body class="sub_page">
 
   <div class="hero_area">
@@ -94,145 +251,65 @@
 
   <!-- service section -->
 
-  <section class="service_section layout_padding">
-    <div class="service_container">
-      <div class="container ">
+  <section class="projects_section layout_padding">
+    <div class="projects_container">
+      <div class="container">
         <div class="heading_container heading_center">
           <h2>
             Our <span>Projects</span>
           </h2>
           <p>
-            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+            Explore our diverse portfolio of projects, showcasing our expertise and commitment to excellence.
           </p>
         </div>
-        <div class="row">
-          <div class="col-md-4 ">
-            <div class="box ">
-              <div class="img-box">
-                <img src="images/s1.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  Currency Wallet
-                </h5>
-                <p>
-                  fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                  The
-                  point of using
-                </p>
-                <a href="">
-                  Read More
-                </a>
-              </div>
+        <div class="cards_wrapper">
+          <div class="card" onclick="openModal('images/POS.png')">
+            <div class="img-box">
+              <img src="images/POS.png" alt="Project One">
+            </div>
+            <div class="detail-box">
+              <h5>POS</h5>
+              <p>Comprehensive Point of Sale (POS) system designed to streamline the management of mobile phone and accessory sales.</p>
+              <span class="category">WEB <b>(MERN)</b></span>
             </div>
           </div>
-          <div class="col-md-4 ">
-            <div class="box ">
-              <div class="img-box">
-                <img src="images/s2.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  Security Storage
-                </h5>
-                <p>
-                  fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                  The
-                  point of using
-                </p>
-                <a href="">
-                  Read More
-                </a>
-              </div>
+          <div class="card" onclick="openModal('images/craftedmindllc-com-1500xFULLdesktop-7d9018.png')">
+            <div class="img-box">
+              <img src="images/craftedmindllc-com-1500xFULLdesktop-7d9018.png" alt="Project Two">
+            </div>
+            <div class="detail-box">
+              <h5>Crafted Minds</h5>
+              <p>Website For Designing Company</p>
+              <span class="category">WEB</span>
             </div>
           </div>
-          <div class="col-md-4 ">
-            <div class="box ">
-              <div class="img-box">
-                <img src="images/s3.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  Expert Support
-                </h5>
-                <p>
-                  fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                  The
-                  point of using
-                </p>
-                <a href="">
-                  Read More
-                </a>
-              </div>
+          <div class="card" onclick="openModal('images/citizenpath-com-1200xFULLdesktop-d3f060.png')">
+            <div class="img-box">
+              <img src="images/citizenpath-com-1200xFULLdesktop-d3f060.png" alt="Project Three">
             </div>
-          </div>
-          <div class="col-md-4 ">
-            <div class="box ">
-              <div class="img-box">
-                <img src="images/s1.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  Currency Wallet
-                </h5>
-                <p>
-                  fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                  The
-                  point of using
-                </p>
-                <a href="">
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 ">
-            <div class="box ">
-              <div class="img-box">
-                <img src="images/s1.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  Currency Wallet
-                </h5>
-                <p>
-                  fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                  The
-                  point of using
-                </p>
-                <a href="">
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 ">
-            <div class="box ">
-              <div class="img-box">
-                <img src="images/s1.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  Currency Wallet
-                </h5>
-                <p>
-                  fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                  The
-                  point of using
-                </p>
-                <a href="">
-                  Read More
-                </a>
-              </div>
+            <div class="detail-box">
+              <h5>CitizenPath</h5>
+              <p>Take the guesswork out of immigration applications. CitizenPath's online immigration services provide an affordable and easy way to prepare USCIS forms correctly.</p>
+              <span class="category">WEB(MERN)</span>
             </div>
           </div>
         </div>
-       
+        <div class="btn-box">
+          <a href="">
+            View All Projects
+          </a>
+        </div>
       </div>
     </div>
+  
+    <!-- The Modal -->
+    <div id="imageModal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img class="modal-content" id="modalImage">
+    </div>
   </section>
+  
+  
 
   <!-- end service section -->
 
@@ -364,3 +441,14 @@
 </body>
 
 </html>
+<script>
+  function openModal(imageSrc) {
+  document.getElementById('modalImage').src = imageSrc;
+  document.getElementById('imageModal').style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById('imageModal').style.display = "none";
+}
+
+</script>
